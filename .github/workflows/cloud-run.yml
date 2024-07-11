@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
   RUN_REGION: us-central1
-  SERVICE_NAME: voice_of_mogen
+  SERVICE_NAME: voiceofmogen
 
 jobs:
   setup-build-deploy:
