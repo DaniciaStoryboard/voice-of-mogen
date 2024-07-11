@@ -22,9 +22,9 @@ jobs:
     # Setup gcloud CLI
     - uses: 'google-github-actions/auth@v2'
       with:
-        project_id: 'ai-mogen'
-        service_account: 'github-actions@ai-mogen.iam.gserviceaccount.com'
-
+        project_id: ${{ secrets.RUN_PROJECT }}
+        service_account: ${{ secrets.RUN_SERVICE_ACCOUNT }}
+        credentials_json: ${{ secrets.RUN_CREDENTIAL_JSON }}
     # - uses: google-github-actions/setup-gcloud@master
       # with:
       #   version: '290.0.1'
