@@ -1,14 +1,13 @@
 from flask import Flask
+from flask_cors import CORS
 
-app = Flask(__name__)
+def create_app():
 
-@app.route('/')
-def home():
-    return "Welcome to the Home Page!\nEnjoy your great day!"
+    app = Flask(__name__)
+    CORS(app, resources={r"/*": {"origins": "*"}})
 
-@app.route('/hello/<name>')
-def hello(name):
-    return f"Hello, {name}!"
-
-if __name__ == '__main__':
-    app.run(debug=False, port=8080)
+    @app.route("/hello", methods=["POST", "GET"])
+    def hello():
+        return "hello, world"
+    
+    return app
