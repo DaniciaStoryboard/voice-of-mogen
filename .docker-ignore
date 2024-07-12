@@ -1,3 +1,4 @@
 Dockerfile
 **/*.log
 .env
+**/__pychache__
